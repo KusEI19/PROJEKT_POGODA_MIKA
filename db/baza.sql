@@ -1,1 +1,1 @@
-SLECE * dd; 
+SLECE * dd;  
