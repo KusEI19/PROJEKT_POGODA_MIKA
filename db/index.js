@@ -42,4 +42,6 @@ function przetworzJson()    {
         });
 }
 
-przetworzJson();
+setInterval(function() {
+    przetworzJson();
+  }, 60000);
