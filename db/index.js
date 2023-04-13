@@ -1,34 +1,45 @@
-const connection = require("mysql2").createConnection({
-    host: "localhost",
-    user: "stahoo",
-    password: "",
-    database: "projekt",
-    });
-  
-async function odpytaj(komenda) {
+const axios = require('axios');
+
+function wciskajDoBazy(dane,ktorySensor) {
+    console.log(dane.data[ktorySensor].state);
+
+    let query;
+
+    if(ktorySensor == 2) {
+        query = 'INSERT INTO wilgotnosc (id, wartosc, kiedy_zczytano) VALUES (NULL, "'+dane.data[ktorySensor].state.humidity+'", "'+dane.timeStamp.date+'");';
+    }
+    else if (ktorySensor == 3)   {
+        query = 'INSERT INTO termometr (id_odczytu, wartosc, kiedy_pobrano) VALUES (NULL, "'+dane.data[ktorySensor].state.temperature+'", "'+dane.timeStamp.date+'");';
+    }
+
+    const connection = require("mysql2").createConnection({
+        host: "localhost",
+        user: "stahoo",
+        password: "",
+        database: "projekt",
+        });
+
     connection
         .promise()
-        .query(komenda)
+        .query(query)
         .then(function ([results, fields]) {
             console.log(results);
         })
         .catch(console.log);
+
+    connection.end();
 }
 
-const axios = require('axios');
-
-axios.get('http://imiki.pl/cf')
-  .then(response => {
-    przetworzJson(response);
-  })
-  .catch(error => {
-    console.log(error);
-  });
-
-function przetworzJson(dane)    {
-    //console.log(dane.data[3]);  //index 3 to temperatura, index 2 to wilgotnosc
-
-    odpytaj("INSERT INTO termometr (id_odczytu,wartosc,kiedy_pobrano) values (NULL, '69', '2069-01-01 21:37:00')")
+function przetworzJson()    {
+    axios.get('http://imiki.pl/cf')
+        .then(response => {
+            for (let i = 2; i<=3; i++)  {
+                wciskajDoBazy(response.data,i);
+            }
+        })
+        .catch(error => {
+            console.log(error);
+        });
 }
 
-connection.end();
+przetworzJson();
