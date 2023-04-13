@@ -29,7 +29,7 @@ axios.get('http://imiki.pl/cf')
   });
 
 function przetworzJson(dane)    {
-    console.log(dane);
+    console.log(dane.data[3]);
 }
 
 connection.end();
