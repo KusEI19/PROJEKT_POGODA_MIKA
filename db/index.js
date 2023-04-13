@@ -30,7 +30,7 @@ function wciskajDoBazy(dane,ktorySensor) {
     connection.end();
 }
 
-function przetworzJson()    {
+setInterval(function() {
     axios.get('http://imiki.pl/cf')
         .then(response => {
             for (let i = 2; i<=3; i++)  {
@@ -40,8 +40,4 @@ function przetworzJson()    {
         .catch(error => {
             console.log(error);
         });
-}
-
-setInterval(function() {
-    przetworzJson();
 }, 60000);
