@@ -44,4 +44,4 @@ function przetworzJson()    {
 
 setInterval(function() {
     przetworzJson();
-  }, 60000);
+}, 60000);
