@@ -18,4 +18,14 @@ odpytaj("SELECT * FROM test1");
 
 // importowanie JSONa z serwera
 
+const axios = require('axios');
+
+axios.get('http://imiki.pl/cf')
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(error => {
+    console.log(error);
+  });
+
 connection.end();
