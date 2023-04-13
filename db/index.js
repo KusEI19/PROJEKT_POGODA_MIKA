@@ -1,8 +1,6 @@
 const axios = require('axios');
 
 function wciskajDoBazy(dane,ktorySensor) {
-    console.log(dane.data[ktorySensor].state);
-
     let query;
 
     if(ktorySensor == 2) {
