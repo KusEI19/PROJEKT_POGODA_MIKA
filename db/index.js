@@ -15,5 +15,7 @@ async function odpytaj(komenda) {
         .catch(console.log);
 }
 odpytaj("SELECT * FROM test1");
-  
+
+// importowanie JSONa z serwera
+
 connection.end();
