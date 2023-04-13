@@ -10,7 +10,7 @@ async function odpytaj(komenda) {
         .promise()
         .query(komenda)
         .then(function ([results, fields]) {
-            console.log(results);
+            return results;
         })
         .catch(console.log);
 }
@@ -22,10 +22,14 @@ const axios = require('axios');
 
 axios.get('http://imiki.pl/cf')
   .then(response => {
-    console.log(response.data);
+    przetworzJson(response.data);
   })
   .catch(error => {
     console.log(error);
   });
+
+function przetworzJson(dane)    {
+    console.log(dane);
+}
 
 connection.end();
