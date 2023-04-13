@@ -13,8 +13,6 @@ async function odpytaj(komenda) {
             return results;
         })
         .catch(console.log);
-
-    connection.end();
 }
 
 const axios = require('axios');
@@ -30,3 +28,5 @@ axios.get('http://imiki.pl/cf')
 function przetworzJson(dane)    {
     console.log(dane.data[3]);
 }
+
+connection.end();
