@@ -13,10 +13,9 @@ async function odpytaj(komenda) {
             return results;
         })
         .catch(console.log);
-}
-odpytaj("SELECT * FROM test1");
 
-// importowanie JSONa z serwera
+    connection.end();
+}
 
 const axios = require('axios');
 
@@ -31,5 +30,3 @@ axios.get('http://imiki.pl/cf')
 function przetworzJson(dane)    {
     console.log(dane.data[3]);
 }
-
-connection.end();
