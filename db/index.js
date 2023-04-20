@@ -12,9 +12,9 @@ function wciskajDoBazy(dane,ktorySensor) {
 
     const connection = require("mysql2").createConnection({
         host: "localhost",
-        user: "stahoo",
-        password: "",
-        database: "projekt",
+        user: "zsti2",
+        password: "EciePecie666!",
+        database: "zsti2",
         });
 
     connection
@@ -28,8 +28,7 @@ function wciskajDoBazy(dane,ktorySensor) {
     connection.end();
 }
 
-setInterval(function() {
-    axios.get('http://imiki.pl/cf')
+axios.get('http://imiki.pl/cf')
         .then(response => {
             for (let i = 2; i<=3; i++)  {
                 wciskajDoBazy(response.data,i);
@@ -38,4 +37,3 @@ setInterval(function() {
         .catch(error => {
             console.log(error);
         });
-}, 60000);
