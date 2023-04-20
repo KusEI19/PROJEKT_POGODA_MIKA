@@ -28,7 +28,7 @@ function wciskajDoBazy(dane,ktorySensor) {
     connection.end();
 }
 
-
+setInterval(function() {
     axios.get('http://192.168.88.254/cf')
         .then(response => {
             for (let i = 2; i<=3; i++)  {
@@ -38,3 +38,4 @@ function wciskajDoBazy(dane,ktorySensor) {
         .catch(error => {
             console.log(error);
         });
+}, 60000);
