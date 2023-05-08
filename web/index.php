@@ -28,6 +28,7 @@
             };
             echo '</div>';
 
+            echo '<div class="table">';
             echo '<table>';
                 $zapytanie3 = 'SELECT * FROM `termometr` ORDER BY `kiedy_pobrano` DESC;';
                 $wynik3 = mysqli_query($link, $zapytanie3);
@@ -44,6 +45,7 @@
                     echo ('<tr><td>'.round($wiersz['wartosc'], 2).'%</td><td>'.date("m-M-Y H:i:s"  ,strtotime($wiersz['kiedy_pobrano'].$time)).'</td></tr>');
                 };
             echo '</table>';
+            echo '</div>';
         ?>
     </div>
     <form action="index.php" method="post"><input type="submit" value="Odśwież dane"></form>

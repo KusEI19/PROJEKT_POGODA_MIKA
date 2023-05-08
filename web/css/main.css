@@ -3,26 +3,26 @@ body {
     color: #fff;
 } 
 
-.content{
+.max{width: 100%;}
+
+.table{
     display: flex;
     flex-wrap: wrap;
 }
-
-.max{width: 100%;}
 
 table {
     border: outset #fff 2px;
     margin: 10px;
     flex-grow: 1;
-    padding: 0.5px;
+    padding: 5px;
 }
 td {
     border: inset #fff 1px;
-    margin: 0.5px;
-    padding: 1px;
+    margin: 1px;
+    padding: 3px;
 }
 th {
     border: outset #fff 1px;
-    margin: 0.5px;
-    padding: 1px;
+    margin: 1px;
+    padding: 3px;
 }
