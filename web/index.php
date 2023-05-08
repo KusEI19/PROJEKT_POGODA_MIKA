@@ -10,10 +10,9 @@
     <?php
         include("config.php");
 
-        echo 'najnowsza wartość tęperatury: ';
         $zapytanie = 'SELECT * FROM `termometr` WHERE `id` = (SELECT MAX(`id`) FROM `termometr`);';
         $wynik = mysqli_query($link, $zapytanie);
-        echo ($wiersz['wartosc'].', czas pobrania danych: '.$wiersz['kiedy_pobrano']);
+        echo ('najnowsza wartość tęperatury: '.$wynik['wartosc'].', czas pobrania danych: '.$wynik['kiedy_pobrano']);
     ?>
 </body>
 </html>
