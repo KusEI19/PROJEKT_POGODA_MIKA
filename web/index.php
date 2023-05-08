@@ -15,7 +15,7 @@
         foreach ($wynik as $wiersz){
             $podzapytanie = 'SELECT MAX(`id`) FROM `termometr`;';
             $podwynik = mysqli_query($link, $podzapytanie);
-            if ($wiersz = $podwynik['id']){
+            if ($wiersz['id'] = $podwynik['id']){
                 echo ('najnowsza wartość tęperatury: '.$wiersz['wartosc'].', czas pobrania danych: '.$wiersz['kiedy_pobrano']);
             };
         };
