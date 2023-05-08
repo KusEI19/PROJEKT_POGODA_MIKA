@@ -13,7 +13,7 @@
         $zapytanie = 'SELECT * FROM `termometr` WHERE `id` = (SELECT MAX(`id`) FROM `termometr`);';
         $wynik = mysqli_query($link, $zapytanie);
         foreach ($wynik as $wiersz){
-            echo ('najnowsza wartość tęperatury: '.$wiersz['wartosc'].', czas pobrania danych: '.$wiersz['kiedy_pobrano']);
+            echo ('najnowsza wartość temperatury: '.$wiersz['wartosc'].', czas pobrania danych: '.$wiersz['kiedy_pobrano']);
         };
 
         echo '<br>';
@@ -29,13 +29,13 @@
             $wynik3 = mysqli_query($link, $zapytanie3);
             $zapytanie4 = 'SELECT * FROM `wilgotnosc`;';
             $wynik4 = mysqli_query($link, $zapytanie4);
-            echo '<tr><th>Tęperatura</th><th>data pobrania</th></tr>';
+            echo '<tr><th>Temperatura</th><th>data pobrania</th></tr>';
             foreach ($wynik3 as $wiersz){
-                echo ('<tr><td>'.$wiersz['wartosc'].'</td><td>'.$wiersz['kiedy_pobrano'].'</td></tr>');
+                echo ('<tr><td>'.round($wiersz['wartosc']).'°C</td><td>'.$wiersz['kiedy_pobrano'].'</td></tr>');
             };
             echo '<tr><th>Wilgotność</th><th>data pobrania</th></tr>';
             foreach ($wynik4 as $wiersz){
-                echo ('<tr><td>'.$wiersz['wartosc'].'</td><td>'.$wiersz['kiedy_pobrano'].'</td></tr>');
+                echo ('<tr><td>'.round($wiersz['wartosc']).'%</td><td>'.$wiersz['kiedy_pobrano'].'</td></tr>');
             };
         echo '</table>';
     ?>
