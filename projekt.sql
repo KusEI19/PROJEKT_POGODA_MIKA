@@ -83,7 +83,7 @@ ALTER TABLE `wilgotnosc`
 -- AUTO_INCREMENT for table `termometr`
 --
 ALTER TABLE `termometr`
-  MODIFY `id_odczytu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `wilgotnosc`
