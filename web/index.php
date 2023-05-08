@@ -7,6 +7,8 @@
     <title>POGODA</title>
 </head>
 <body>
-    
+    <?php
+        include("config.php");
+    ?>
 </body>
 </html>
