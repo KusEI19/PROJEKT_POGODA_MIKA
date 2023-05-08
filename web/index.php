@@ -27,7 +27,7 @@
         };
         echo '</div>';
 
-        echo '<table class="table">';
+        echo '<table>';
             $zapytanie3 = 'SELECT * FROM `termometr`;';
             $wynik3 = mysqli_query($link, $zapytanie3);
             echo '<tr><th>Temperatura</th><th>data pobrania</th></tr>';
@@ -35,12 +35,12 @@
                 echo ('<tr><td>'.round($wiersz['wartosc'], 2).'°C</td><td>'.date("m-M-Y H:i:s"  ,strtotime($wiersz['kiedy_pobrano'].$time)).'</td></tr>');
             };
         echo '</table>';
-        echo '<table class="table">';
+        echo '<table>';
             $zapytanie4 = 'SELECT * FROM `wilgotnosc`;';
             $wynik4 = mysqli_query($link, $zapytanie4);
             echo '<tr><th>Wilgotność</th><th>data pobrania</th></tr>';
             foreach ($wynik4 as $wiersz){
-                echo ('<tr><td>'.round($wiersz['wartosc'], 2).'%</td><td>'.date("m-M-Y H:i:s"  ,strtotime($wiersz['kiedy_pobrano'].$time)).'</td></tr>');
+                echo ('<tr><td>'.round($wiersz['wartosc'], 3).'%</td><td>'.date("m-M-Y H:i:s"  ,strtotime($wiersz['kiedy_pobrano'].$time)).'</td></tr>');
             };
         echo '</table>';
     ?>

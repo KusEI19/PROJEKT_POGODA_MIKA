@@ -7,7 +7,13 @@ body {
 
 .max{width: 100%;}
 
-.table {
-    border: 1px;
+table {
+    border: outset #fff 2px;
     margin: 10px;
+}
+td {
+    border: inset #fff 1px;
+}
+th {
+    border: outset #fff 1px;
 }
