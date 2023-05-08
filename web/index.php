@@ -31,11 +31,11 @@
             $wynik4 = mysqli_query($link, $zapytanie4);
             echo '<tr><th>Temperatura</th><th>data pobrania</th></tr>';
             foreach ($wynik3 as $wiersz){
-                echo ('<tr><td>'.round($wiersz['wartosc']).'°C</td><td>'.$wiersz['kiedy_pobrano'].'</td></tr>');
+                echo ('<tr><td>'.round($wiersz['wartosc']).'°C</td><td>'.strtotime($wiersz['kiedy_pobrano']."+ 2 hours").'</td></tr>');
             };
             echo '<tr><th>Wilgotność</th><th>data pobrania</th></tr>';
             foreach ($wynik4 as $wiersz){
-                echo ('<tr><td>'.round($wiersz['wartosc']).'%</td><td>'.$wiersz['kiedy_pobrano'].'</td></tr>');
+                echo ('<tr><td>'.round($wiersz['wartosc']).'%</td><td>'.strtotime($wiersz['kiedy_pobrano']."+ 2 hours").'</td></tr>');
             };
         echo '</table>';
     ?>
