@@ -12,10 +12,10 @@
 	}
 
 
-    $pocz = strtotime("26 mar");
-    $kon = strtotime("29 paź");
-    $dzis = date("m d", strtotime("now"));
-    if ($dzis > $pocz && $dzis < $kon){
+    $pocz = mktime(0,0,0,3,26,0);
+    $kon = mktime(0,0,0,10,29,0);
+    $dzis = mktime(0,0,0,date("m,d", strtotime("now")),0);
+    if ($dzis >= $pocz && $dzis <= $kon){
         $time = "+ 2 hours";
     }else{
         $time = "+ 1 hour";
