@@ -9,8 +9,8 @@ body {
         "tem wil";
 } 
 
-.mtem{grid-area: mtem;}
-.tem{grid-area: tem;}
+.mter{grid-area: mtem;}
+.ter{grid-area: tem;}
 .mwil{grid-area: mwil;}
 .wil{grid-area: wil;}
 
