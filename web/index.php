@@ -13,7 +13,7 @@
         $zapytanie = 'SELECT * FROM `termometr` WHERE `id` = (SELECT MAX(`id`) FROM `termometr`);';
         $wynik = mysqli_query($link, $zapytanie);
         foreach ($wynik as $wiersz){
-            echo ('najnowsza wartość temperatury: '.$wiersz['wartosc'].', czas pobrania danych: '.$wiersz['kiedy_pobrano']);
+            echo ('najnowsza wartość temperatury: '.$wiersz['wartosc'].'°C, czas pobrania danych: '.date("m-d-Y H:i:s"  ,strtotime($wiersz['kiedy_pobrano']."+ 2 hours")));
         };
 
         echo '<br>';
@@ -21,7 +21,7 @@
         $zapytanie2 = 'SELECT * FROM `wilgotnosc` WHERE `id` = (SELECT MAX(`id`) FROM `wilgotnosc`);';
         $wynik2 = mysqli_query($link, $zapytanie2);
         foreach ($wynik2 as $wiersz2){
-            echo ('najnowsza wartość wilgotności: '.$wiersz2['wartosc'].', czas pobrania danych: '.$wiersz2['kiedy_pobrano']);
+            echo ('najnowsza wartość wilgotności: '.$wiersz2['wartosc'].'%, czas pobrania danych: '.date("m-d-Y H:i:s"  ,strtotime($wiersz['kiedy_pobrano']."+ 2 hours")));
         };
 
         echo '<table border="1">';
@@ -31,11 +31,11 @@
             $wynik4 = mysqli_query($link, $zapytanie4);
             echo '<tr><th>Temperatura</th><th>data pobrania</th></tr>';
             foreach ($wynik3 as $wiersz){
-                echo ('<tr><td>'.round($wiersz['wartosc']).'°C</td><td>'.date("D-M-Y H:i:s"  ,strtotime($wiersz['kiedy_pobrano']."+ 2 hours")).'</td></tr>');
+                echo ('<tr><td>'.round($wiersz['wartosc']).'°C</td><td>'.date("m-M-Y H:i:s"  ,strtotime($wiersz['kiedy_pobrano']."+ 2 hours")).'</td></tr>');
             };
             echo '<tr><th>Wilgotność</th><th>data pobrania</th></tr>';
             foreach ($wynik4 as $wiersz){
-                echo ('<tr><td>'.round($wiersz['wartosc']).'%</td><td>'.date("D-M-Y H:i:s"  ,strtotime($wiersz['kiedy_pobrano']."+ 2 hours")).'</td></tr>');
+                echo ('<tr><td>'.round($wiersz['wartosc']).'%</td><td>'.date("m-M-Y H:i:s"  ,strtotime($wiersz['kiedy_pobrano']."+ 2 hours")).'</td></tr>');
             };
         echo '</table>';
     ?>
