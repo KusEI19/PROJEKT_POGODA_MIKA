@@ -10,9 +10,16 @@
     <?php
         include("config.php");
 
-        $zapytanie = 'SELECT * FROM `termometr` WHERE `id` = (SELECT MAX(`id`) FROM `termometr`);';
+        echo 'najnowsza wartość tęperatury: ';
+        $zapytanie = 'SELECT * FROM `termometr` WHERE `id`;';
         $wynik = mysqli_query($link, $zapytanie);
-        echo ('najnowsza wartość tęperatury: '.$wynik['wartosc'].', czas pobrania danych: '.$wynik['kiedy_pobrano']);
+        foreach ($wynik as $wiersz){
+            $podzapytanie = 'SELECT MAX(`id`) FROM `termometr`;';
+            $podwynik = mysqli_query($link, $podzapytanie);
+            if ($wiersz = $podwynik['id']){
+                echo ($wiersz['wartosc'].', czas pobrania danych: '.$wiersz['kiedy_pobrano']);
+            };
+        };
     ?>
 </body>
 </html>
