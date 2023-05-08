@@ -10,14 +10,13 @@
     <?php
         include("config.php");
 
-        echo 'najnowsza wartość tęperatury: ';
         $zapytanie = 'SELECT * FROM `termometr` WHERE `id`;';
         $wynik = mysqli_query($link, $zapytanie);
         foreach ($wynik as $wiersz){
             $podzapytanie = 'SELECT MAX(`id`) FROM `termometr`;';
             $podwynik = mysqli_query($link, $podzapytanie);
             if ($wiersz = $podwynik['id']){
-                echo ($wiersz['wartosc'].', czas pobrania danych: '.$wiersz['kiedy_pobrano']);
+                echo ('najnowsza wartość tęperatury: '.$wiersz['wartosc'].', czas pobrania danych: '.$wiersz['kiedy_pobrano']);
             };
         };
     ?>
