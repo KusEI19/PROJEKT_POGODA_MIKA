@@ -10,4 +10,14 @@
 		$polaczenie = "Baza się podłączyła";
 		echo '<script>console.log("'.$polaczenie.'")</script>';
 	}
+
+
+    $pocz = strtotime("26 mar");
+    $kon = strtotime("29 paź");
+    $dzis = date("m d", strtotime("now"));
+    if ($dzis > $pocz && $dzis < $kon){
+        $time = "+ 2 hours";
+    }else{
+        $time = "+ 1 hour";
+    }
 ?>
