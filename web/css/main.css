@@ -17,3 +17,7 @@ td {
 th {
     border: outset #fff 1px;
 }
+
+.submit{
+    align-self: flex-end;
+}
