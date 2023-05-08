@@ -10,23 +10,23 @@
     <?php
         include("config.php");
 
+        echo '<div class="mter">';
         $zapytanie = 'SELECT * FROM `termometr` WHERE `id` = (SELECT MAX(`id`) FROM `termometr`);';
         $wynik = mysqli_query($link, $zapytanie);
         foreach ($wynik as $wiersz){
             echo ('najnowsza wartość temperatury: '.$wiersz['wartosc'].'°C, czas pobrania danych: '.date("m-d-Y H:i:s"  ,strtotime($wiersz['kiedy_pobrano'].$time)));
         };
+        echo '</div>';
 
-        echo '<br>';
-
+        echo '<div class="mwil">';
         $zapytanie2 = 'SELECT * FROM `wilgotnosc` WHERE `id` = (SELECT MAX(`id`) FROM `wilgotnosc`);';
         $wynik2 = mysqli_query($link, $zapytanie2);
         foreach ($wynik2 as $wiersz2){
             echo ('najnowsza wartość wilgotności: '.$wiersz2['wartosc'].'%, czas pobrania danych: '.date("m-d-Y H:i:s"  ,strtotime($wiersz['kiedy_pobrano'].$time)));
         };
+        echo '</div>';
 
-        echo '<br>';
-
-        echo '<table border="1" style="float:left;">';
+        echo '<table class="ter">';
             $zapytanie3 = 'SELECT * FROM `termometr`;';
             $wynik3 = mysqli_query($link, $zapytanie3);
             echo '<tr><th>Temperatura</th><th>data pobrania</th></tr>';
@@ -34,7 +34,7 @@
                 echo ('<tr><td>'.round($wiersz['wartosc'], 2).'°C</td><td>'.date("m-M-Y H:i:s"  ,strtotime($wiersz['kiedy_pobrano'].$time)).'</td></tr>');
             };
         echo '</table>';
-        echo '<table border="1" style="float:left;">';
+        echo '<table class="wil">';
             $zapytanie4 = 'SELECT * FROM `wilgotnosc`;';
             $wynik4 = mysqli_query($link, $zapytanie4);
             echo '<tr><th>Wilgotność</th><th>data pobrania</th></tr>';
@@ -42,7 +42,6 @@
                 echo ('<tr><td>'.round($wiersz['wartosc'], 2).'%</td><td>'.date("m-M-Y H:i:s"  ,strtotime($wiersz['kiedy_pobrano'].$time)).'</td></tr>');
             };
         echo '</table>';
-        echo '<div style="clear:both"></div>'
     ?>
     <form action="index.php" method="post"><input type="submit" value="Odśwież dane"></form>
 </body>
