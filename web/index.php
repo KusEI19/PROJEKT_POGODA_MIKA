@@ -24,7 +24,7 @@
             echo ('najnowsza wartość wilgotności: '.$wiersz2['wartosc'].', czas pobrania danych: '.$wiersz2['kiedy_pobrano']);
         };
 
-        echo '<table>';
+        echo '<table border="1">';
             $zapytanie3 = 'SELECT * FROM `termometr`;';
             $wynik3 = mysqli_query($link, $zapytanie3);
             $zapytanie4 = 'SELECT * FROM `wilgotnosc`;';
