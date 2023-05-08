@@ -37,7 +37,7 @@ CREATE TABLE `termometr` (
 -- Dumping data for table `termometr`
 --
 
-INSERT INTO `termometr` (`id_odczytu`, `wartosc`, `kiedy_pobrano`) VALUES
+INSERT INTO `termometr` (`id`, `wartosc`, `kiedy_pobrano`) VALUES
 (1, 13.5625, '2023-04-13 10:54:39');
 
 -- --------------------------------------------------------
