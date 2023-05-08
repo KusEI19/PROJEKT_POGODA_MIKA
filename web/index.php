@@ -16,6 +16,8 @@
             echo ('najnowsza wartość tęperatury: '.$wiersz['wartosc'].', czas pobrania danych: '.$wiersz['kiedy_pobrano']);
         };
 
+        echo '<br>'
+
         $zapytanie2 = 'SELECT * FROM `wilgotnosc` WHERE `id` = (SELECT MAX(`id`) FROM `wilgotnosc`);';
         $wynik2 = mysqli_query($link, $zapytanie2);
         foreach ($wynik2 as $wiersz2){
