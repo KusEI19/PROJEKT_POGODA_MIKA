@@ -11,7 +11,7 @@
         include("config.php");
 
         echo 'najnowsza wartość tęperatury: ';
-        $zapytanie = 'SELECT * FROM `termometr` WHERE MAX(`id`);';
+        $zapytanie = 'SELECT * FROM `termometr` WHERE `id` = (SELECT MAX(`id`) FROM `termometr`);';
         $wynik = mysqli_query($link, $zapytanie);
         foreach ($wynik as $wiersz){
             echo ($wiersz['wartosc'].', czas pobrania danych: '.$wiersz['kiedy_pobrano']);
