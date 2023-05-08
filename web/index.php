@@ -40,7 +40,7 @@
             $wynik4 = mysqli_query($link, $zapytanie4);
             echo '<tr><th>Wilgotność</th><th>data pobrania</th></tr>';
             foreach ($wynik4 as $wiersz){
-                echo ('<tr><td>'.round($wiersz['wartosc'], 3).'%</td><td>'.date("m-M-Y H:i:s"  ,strtotime($wiersz['kiedy_pobrano'].$time)).'</td></tr>');
+                echo ('<tr><td>'.round($wiersz['wartosc'], 2).'%</td><td>'.date("m-M-Y H:i:s"  ,strtotime($wiersz['kiedy_pobrano'].$time)).'</td></tr>');
             };
         echo '</table>';
     ?>
