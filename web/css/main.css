@@ -1,23 +1,23 @@
 body {
     background-color: #555;
     color: #fff;
+} 
+
+.content{
     display: flex;
     flex-wrap: wrap;
-} 
+}
 
 .max{width: 100%;}
 
 table {
     border: outset #fff 2px;
     margin: 10px;
+    flex-grow: 1;
 }
 td {
     border: inset #fff 1px;
 }
 th {
     border: outset #fff 1px;
-}
-
-.submit{
-    align-self: flex-end;
 }
