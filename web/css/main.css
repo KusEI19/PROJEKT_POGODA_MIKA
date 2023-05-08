@@ -14,10 +14,15 @@ table {
     border: outset #fff 2px;
     margin: 10px;
     flex-grow: 1;
+    padding: 0.5px;
 }
 td {
     border: inset #fff 1px;
+    margin: 0.5px;
+    padding: 1px;
 }
 th {
     border: outset #fff 1px;
+    margin: 0.5px;
+    padding: 1px;
 }
