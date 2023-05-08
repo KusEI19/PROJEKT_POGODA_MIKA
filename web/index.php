@@ -44,5 +44,6 @@
         echo '</table>';
         echo '<div style="clear:both"></div>'
     ?>
+    <form action="index.php" method="post"><input type="submit" value="Odśwież dane"></form>
 </body>
 </html>
