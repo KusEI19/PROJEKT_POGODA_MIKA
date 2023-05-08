@@ -67,7 +67,7 @@ INSERT INTO `wilgotnosc` (`id`, `wartosc`, `kiedy_zczytano`) VALUES
 -- Indexes for table `termometr`
 --
 ALTER TABLE `termometr`
-  ADD PRIMARY KEY (`id_odczytu`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `wilgotnosc`
