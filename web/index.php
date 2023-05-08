@@ -23,6 +23,21 @@
         foreach ($wynik2 as $wiersz2){
             echo ('najnowsza wartość wilgotności: '.$wiersz2['wartosc'].', czas pobrania danych: '.$wiersz2['kiedy_pobrano']);
         };
+
+        echo '<table>'
+            $zapytanie3 = 'SELECT * FROM `termometr`;';
+            $wynik3 = mysqli_query($link, $zapytanie3);
+            $zapytanie4 = 'SELECT * FROM `wilgotnosc`;';
+            $wynik4 = mysqli_query($link, $zapytanie4);
+            echo '<tr><th>Tęperatura</th><th>data pobrania</th></tr>';
+            foreach ($wynik3 as $wiersz){
+                echo ('<tr><td>'.$wiersz['wartosc'].'</td><td>'.$wiersz['kiedy_pobrano'].'</td></tr>');
+            };
+            echo '<tr><th>Wilgotność</th><th>data pobrania</th></tr>';
+            foreach ($wynik4 as $wiersz){
+                echo ('<tr><td>'.$wiersz['wartosc'].'</td><td>'.$wiersz['kiedy_pobrano'].'</td></tr>');
+            };
+        echo '</table>'
     ?>
 </body>
 </html>
