@@ -64,6 +64,7 @@ tr:hover {
 
 input[type=submit] {
     background-color: #031e17;
+    color: #fff;
   	border: none;
   	padding: 10px 20px;
   	text-align: center;
