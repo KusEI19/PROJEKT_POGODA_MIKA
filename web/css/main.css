@@ -1,7 +1,7 @@
 body {
     background-color: #555;
     color: #fff;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 } 
 
 .content{
@@ -11,9 +11,8 @@ body {
 
 .max{
     width: 100%;
-    background-color: #9cd5c5;
+    background-color: #031e17;
     border: none;
-    color: #000;
     padding: 10px 20px;
     text-decoration: none;
     display: inline-block;
@@ -25,33 +24,35 @@ body {
 .table{
 	border: outset #fff 2px;
     height: 70vh;
-    margin: 5px;
+	margin: 5px;
     flex-grow: 1;
     overflow: scroll;
     overflow-x: hidden;
+	border-radius: 5px;
 }
 
 table {
 	width: 97%;
     margin: 2px;
     padding: 5px;
-    border-radius: 5px;
 }
 
 td {
-    border: inset #fff 1px;
-    margin: 1px;
-    padding: 3px;
+    margin: 2px;
+    padding: 5px;
+	padding-left: 20px;
 }
 
 th {
-    border: outset #fff 1px;
-    margin: 1px;
-    padding: 3px;
+    margin: 2px;
+    padding: 5px;
+	padding-left: 20px;
 }
 
 tr {
+    border-bottom: solid #fff 2px;
     transition: 0.2s;
+	border-radius: 5px;
 }
 
 tr:hover {
@@ -61,17 +62,17 @@ tr:hover {
 
 input[type=submit] {
     background-color: #9cd5c5;
-    border: none;
-    color: #000;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.25s;
+  	border: none;
+  	color: #000;
+  	padding: 10px 20px;
+  	text-align: center;
+	text-decoration: none;
+  	display: inline-block;
+  	font-size: 16px;
+  	margin: 4px 2px;
+  	cursor: pointer;
+  	border-radius: 5px;
+  	transition: 0.2s;
 }
 
 input[type=submit]:hover {
