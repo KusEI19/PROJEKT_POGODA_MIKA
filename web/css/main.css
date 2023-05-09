@@ -12,7 +12,8 @@ body {
 
 .table{
 	border: outset #fff 2px;
-    height: 60vh;
+    height: 70vh;
+    margin: 5px;
     flex-grow: 1;
     overflow: scroll;
     overflow-x: hidden;
@@ -22,14 +23,46 @@ table {
 	width: 97%;
     margin: 2px;
     padding: 5px;
+    border-radius: 5px;
 }
+
 td {
     border: inset #fff 1px;
     margin: 1px;
     padding: 3px;
 }
+
 th {
     border: outset #fff 1px;
     margin: 1px;
     padding: 3px;
+}
+
+tr {
+    transition: 0.2s;
+}
+
+tr:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+input[type=submit] {
+    background-color: #9cd5c5;
+  border: none;
+  color: #000;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.25s;
+}
+
+input[type=submit]:hover {
+    background-color: #031e17;
+    color: #fff;
 }
