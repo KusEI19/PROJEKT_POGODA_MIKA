@@ -46,6 +46,8 @@ td {
 
 th {
     border-bottom: solid #fff 2px;
+    background-color: #ccc;
+    color: #000;
     margin: 2px;
     padding: 5px;
 	padding-left: 20px;
