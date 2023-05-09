@@ -38,12 +38,14 @@ table {
 }
 
 td {
+    border-bottom: solid #fff 2px;
     margin: 2px;
     padding: 5px;
 	padding-left: 20px;
 }
 
 th {
+    border-bottom: solid #fff 2px;
     margin: 2px;
     padding: 5px;
 	padding-left: 20px;
