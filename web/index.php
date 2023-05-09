@@ -50,6 +50,6 @@
             echo '</div>';
         ?>
     </div>
-    <form action="index.php" method="post"><input type="submit" value="Odśwież dane"></form>
+    <form method="post"><input type="submit" value="Odśwież dane"></form>
 </body>
 </html>

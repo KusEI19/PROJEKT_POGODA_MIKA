@@ -11,13 +11,16 @@
 		echo '<script>console.log("'.$polaczenie.'")</script>';
 	}
 
-
-    $pocz = mktime(0,0,0,3,26,0);
+	$mies = date("m", strtotime("now"));
+	$dzien = date("d", strtotime("now"));
+	$pocz = mktime(0,0,0,3,26,0);
     $kon = mktime(0,0,0,10,29,0);
-    $dzis = mktime(0,0,0,date("m,d", strtotime("now")),0);
+    $dzis = mktime(0,0,0,$mies,$dzien,0);
     if ($dzis >= $pocz && $dzis <= $kon){
         $time = "+ 2 hours";
+		// czas letni do czasu zapisanego w bazie danych
     }else{
         $time = "+ 1 hour";
+		// czas zimowy do czasu zapisanego w bazie danych
     }
 ?>
